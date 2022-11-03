@@ -6,4 +6,5 @@
 \COPY skus(id, styleId, size, quantity) FROM './csvStorage/skus.csv' DELIMITER ',' CSV HEADER;
 
 
-SELECT * FROM style LIMIT 15;
+SELECT * FROM photos LIMIT 15;
+
