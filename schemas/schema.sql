@@ -69,3 +69,12 @@ ALTER TABLE style  ADD CONSTRAINT style_productId_fk  FOREIGN KEY (productId ) R
 ALTER TABLE skus ADD CONSTRAINT skus_styleId_fk  FOREIGN KEY (styleId  ) REFERENCES style (id);
 ALTER TABLE photos ADD CONSTRAINT photos_styleId__fk FOREIGN KEY (styleId ) REFERENCES style (id);
 ALTER TABLE related ADD CONSTRAINT related_current_product_id_fk FOREIGN KEY (current_product_id ) REFERENCES product(id);
+
+
+CREATE INDEX product_index ON product(id);
+CREATE INDEX styles_index ON style(id);
+CREATE INDEX skus_index ON skus(styleId);
+CREATE INDEX related_index ON related(id);
+CREATE INDEX photo_index ON photos(styleId);
+CREATE INDEX related_indexs ON related(id);
+CREATE INDEX features_index ON features(product_id);

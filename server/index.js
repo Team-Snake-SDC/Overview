@@ -13,7 +13,13 @@ app.get('/', (req, res) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
-app.get('/overview' , db.getProductById)
+app.get('/products', db.getProduct)
+
+app.get('/products/:product_id', db.getProductById)
+
+app.get('/products/:product_id/styles', db.getStlyles)
+
+app.get('/products/:product_id/related', db.getRelated)
 
 
 app.listen(PORT);
