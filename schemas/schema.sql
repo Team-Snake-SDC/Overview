@@ -72,7 +72,9 @@ ALTER TABLE related ADD CONSTRAINT related_current_product_id_fk FOREIGN KEY (cu
 
 
 CREATE INDEX product_index ON product(id);
-CREATE INDEX styles_index ON style(id);
+CREATE INDEX styles_index ON style(productId);
+CREATE INDEX styles_actual_id ON style(id);
+CREATE INDEX styles_actual_index ON style(productId);
 CREATE INDEX skus_index ON skus(styleId);
 CREATE INDEX related_index ON related(id);
 CREATE INDEX photo_index ON photos(styleId);

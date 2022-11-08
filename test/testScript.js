@@ -41,7 +41,7 @@ export default function test() {
 	// });
 
 	// group('productsByIDResponse', () => {
-	// 	const productsByIDResponse = http.post(productsByID);
+	// 	const productsByIDResponse = http.get(productsByID);
 	// 	check(productsByIDResponse, {
 	// 		'transaction time 10ms': (r) => r.timings.duration < 10,
 	// 		'transaction time 50ms': (r) => r.timings.duration < 50,
@@ -55,24 +55,9 @@ export default function test() {
 	// 	});
 	// });
 
-	// group('stylesResponse', () => {
-	// 	const stylesResponse = http.get(styles);
-	// 	check(stylesResponse, {
-	// 		'transaction time 10ms': (r) => r.timings.duration < 10,
-	// 		'transaction time 50ms': (r) => r.timings.duration < 50,
-	// 		'transaction time 200ms': (r) => r.timings.duration < 200,
-	// 		'transaction time 500ms': (r) => r.timings.duration < 500,
-	// 		'transaction time 1000ms': (r) => r.timings.duration < 1000,
-	// 		'transaction time 2000ms': (r) => r.timings.duration < 2000,
-	// 		'transaction time 5000ms': (r) => r.timings.duration < 5000,
-	// 		'transaction time 10s': (r) => r.timings.duration < 10000,
-	// 		'transaction time 20s': (r) => r.timings.duration < 20000,
-	// 	});
-	// });
-
-	group('relatedResponse', () => {
-		const relatedResponse = http.put(related);
-		check(relatedResponse, {
+	group('stylesResponse', () => {
+		const stylesResponse = http.get(styles);
+		check(stylesResponse, {
 			'transaction time 10ms': (r) => r.timings.duration < 10,
 			'transaction time 50ms': (r) => r.timings.duration < 50,
 			'transaction time 200ms': (r) => r.timings.duration < 200,
@@ -84,4 +69,19 @@ export default function test() {
 			'transaction time 20s': (r) => r.timings.duration < 20000,
 		});
 	});
+
+	// group('relatedResponse', () => {
+	// 	const relatedResponse = http.get(related);
+	// 	check(relatedResponse, {
+	// 		'transaction time 10ms': (r) => r.timings.duration < 10,
+	// 		'transaction time 50ms': (r) => r.timings.duration < 50,
+	// 		'transaction time 200ms': (r) => r.timings.duration < 200,
+	// 		'transaction time 500ms': (r) => r.timings.duration < 500,
+	// 		'transaction time 1000ms': (r) => r.timings.duration < 1000,
+	// 		'transaction time 2000ms': (r) => r.timings.duration < 2000,
+	// 		'transaction time 5000ms': (r) => r.timings.duration < 5000,
+	// 		'transaction time 10s': (r) => r.timings.duration < 10000,
+	// 		'transaction time 20s': (r) => r.timings.duration < 20000,
+	// 	});
+	// });
 }

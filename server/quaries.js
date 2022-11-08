@@ -56,9 +56,9 @@ const getStlyles = (req, res) => {
 const getRelated = (req, res) => {
   let id = req.query.product_id || req.body.product_id || req.params.product_id
   pool
-  .query('SELECT * FROM related WHERE productId = $1', [id])
+  .query(`SELECT json_agg(related_product_id)  FROM related WHERE current_product_id  = ${id}`)
   .then((data) => {
-    res.send(data.rows)
+    res.send(data.rows[0].json_agg)
   })
   .catch((err)=>{
     console.log("this is the error in get products", err)
