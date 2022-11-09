@@ -2,3 +2,5 @@
 csvStorage/
 
 node_modules/
+
+.env

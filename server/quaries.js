@@ -1,11 +1,13 @@
+require('dotenv').config();
 const Pool = require('pg').Pool
 const pool = new Pool({
-  user: 'mrway',
-  host: 'localhost',
-  database: 'Overview',
-  password: '',
-  port: 5432,
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT
 })
+
 
 
 const getProduct = (req, res) => {
