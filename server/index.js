@@ -3,11 +3,16 @@ const express = require('express')
 const app = express();
 const PORT = 3000
 const db = require("./quaries.js")
+require("dotenv").config()
 
 
 app.use(express.json())
 // app.use(express.urlencoded())
 
+
+app.get('/' + process.env.IOUSER, (req, res)=>{
+  res.send(process.env.IOUSER)
+})
 
 app.get('/', (req, res) => {
   res.json({ info: 'Node.js, Express, and Postgres API' })
