@@ -14,7 +14,6 @@ const pool = new Pool({
 const getProduct = (req, res) => {
   let count = req.query.count || 5
   let page = req.query.page || 1
-  console.log(count,page)
   pool
   .query(`SELECT * FROM product LIMIT ${count} OFFSET ${(page-1) * count}`)
   .then((data) => {
